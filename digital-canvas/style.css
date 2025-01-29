@@ -1,0 +1,81 @@
+* {
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#my-canvas {
+    border: 1px solid white;
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/pexels-markusspiske-1089438.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 2px 0;
+    margin: 2px 0;
+}
+
+a {
+    padding: 1px;
+    border-radius: 2px;
+}
+
+a:hover {
+    color: black;
+    background-color: lightgray;
+}
+
+.resources {
+    padding: 2rem;
+    font-family: "VT323", serif;
+    color: white;
+    
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.caret {
+    animation: blink 1s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

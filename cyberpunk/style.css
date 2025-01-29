@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+aside {
+    position: fixed;
+    width: 100vw;
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+aside div {
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-family: "Audiowide", serif;
+    font-size: x-small;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(223, 223, 223);
+}
+
+.container {
+    background: linear-gradient(rgb(32, 26, 37), 80%, transparent), url("assets/alex-knight-Ys-DBJeX0nE-unsplash.jpg");
+    background-size: cover;
+    background-position: center 5%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.neon-sign {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px magenta,
+      0 0 82px magenta,
+      0 0 92px magenta,
+      0 0 102px magenta,
+      0 0 151px magenta;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.media-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    height: 20%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    animation: slide 20s linear infinite;
+}
+
+.image-container img {
+    opacity: 50%;
+    filter: blur(2px);
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.image-container img:nth-child(1) { animation: centerImage1 20s linear infinite; }
+.image-container img:nth-child(2) { animation: centerImage2 20s linear infinite; }
+.image-container img:nth-child(3) { animation: centerImage3 20s linear infinite; }
+.image-container img:nth-child(4) { animation: centerImage4 20s linear infinite; }
+.image-container img:nth-child(5) { animation: centerImage5 20s linear infinite; }
+
+.video-container {
+    height: 70%;
+}
+
+video, img {
+    width: auto;
+    height: 100%;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 100%;
+    }
+    20%, 24%, 55% {
+        opacity: 30%;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-20%);
+        gap: 1rem;
+    }
+    25% {
+        transform: translateX(0%);
+        gap: 3rem;
+    }
+    50% {
+        transform: translateX(20%);
+        gap: 1rem;
+    }
+    75% {
+        transform: translateX(0%);
+        gap: 3rem;
+    }
+    100% {
+        transform: translateX(-20%);
+        gap: 1rem;
+    }
+}
+
+@keyframes centerImage1 {
+    0%, 100% {
+        opacity: 50%;
+        filter: blur(2px);
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 100%;
+        filter: blur(0);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes centerImage2 {
+    0%, 100% {
+        opacity: 75%;
+        filter: blur(2px);
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 80%;
+        filter: blur(1px);
+        transform: scale(1);
+    }
+    35%, 65% {
+        opacity: 100%;
+        filter: blur(0);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes centerImage3 {
+    0%, 50%, 100% {
+        opacity: 80%;
+        filter: blur(1px);
+        transform: scale(1);
+    }
+    25%, 75% {
+        opacity: 100%;
+        filter: blur(0);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes centerImage4 {
+    0%, 100% {
+        opacity: 80%;
+        filter: blur(1px);
+        transform: scale(1);
+    }
+    12%, 88% {
+        opacity: 100%;
+        filter: blur(0);
+        transform: scale(1.1);
+    }
+    50% {
+        opacity: 75%;
+        filter: blur(2px);
+        transform: scale(0.95);
+    }
+}
+
+@keyframes centerImage5 {
+    0%, 100% {
+        opacity: 100%;
+        filter: blur(0);
+        transform: scale(1.1);
+    }
+    50% {
+        opacity: 50%;
+        filter: blur(2px);
+        transform: scale(0.9);
+    }
+}

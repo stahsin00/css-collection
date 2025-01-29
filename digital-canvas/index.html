@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Canvas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="my-canvas" width="768" height="576"></canvas>
+    </div>
+    <div class="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li>C:\Users\admin> curl <a href="https://www.pexels.com/photo/close-up-photo-of-matrix-background-1089438/" target="_blank">https://www.pexels.com/photo/close-up-photo-of-matrix-background-1089438/</a></li>
+            <li>C:\Users\admin> curl <a href="https://www.pexels.com/photo/a-man-and-woman-with-prosthetic-hand-sitting-on-the-floor-7689143/" target="_blank">https://www.pexels.com/photo/a-man-and-woman-with-prosthetic-hand-sitting-on-the-floor-7689143/</a></li>
+            <li>C:\Users\admin> <span class="caret">_</span></li>
+        </ul>
+    </div>
+    <script>
+        let myCanvas = document.getElementById("my-canvas");
+        let myContext = myCanvas.getContext("2d");
+
+        let im = new Image();
+        im.src = "assets/pexels-yaroslav-shuraev-7689143.jpg";
+
+        document.fonts.load("italic 24px 'VT323'").then(function(){
+            im.onload = function() {
+                myContext.drawImage(im, 0, 0, 4121, 3091, 0, 0,  myCanvas.width, myCanvas.height);
+
+                myContext.fillStyle = "black";
+                myContext.strokeStyle = "white";
+                myContext.lineWidth = 1;
+                let width = 625;
+                let height = 30;
+                let x = 80;
+                let y = 275;
+
+                myContext.fillRect(x , y, width, height);
+                myContext.strokeRect(x , y, width, height);
+
+                myContext.beginPath();
+                myContext.moveTo(0, 500);
+                x = 0;
+                while (x < 768) {
+                    let inc = Math.random() * (20 - 15) + 15;
+                    let peak = Math.random() * (500 - 350) + 350;
+                    x += inc;
+                    myContext.lineTo(x, peak);
+                }
+                myContext.lineTo(768, 350);
+
+                myContext.strokeStyle = "black";
+                myContext.lineWidth = 2;
+                myContext.stroke();
+
+                myContext.font = "italic 24px 'VT323'";
+                myContext.fillStyle = "white";
+                myContext.fillText("\"In the digital realm, imagination is the only limit.\" - Unknown",80,298);
+            }
+        });
+    </script>
+</body>
+</html>
